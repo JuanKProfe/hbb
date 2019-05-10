@@ -1,1 +1,452 @@
+<!DOCTYPE html>
 
+<!--------------- IDIOMA WEB --------------->
+
+<html lang="es">
+
+<!--------------- HEAD --------------->
+
+<head>
+
+<!--------------- META --------------->
+
+  <meta charset="utf-8">
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <meta name="author" content="Alejandro Chica Ramírez">
+
+  <meta name="copyright" content="Cliente">
+
+  <meta name="description" content="Descripción corta">
+
+  <meta name="keywords" content="identidad, ref1, ref2, ref3, ref4, ciudad, sector">
+
+  <meta name="contact" content="info@alejandrochica.com">
+
+  <meta name="robots" content="Index, Follow">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<!--------------- FAVICON --------------->
+
+  <link rel="icon" type="icon/png" href="img/favicon.png">
+
+<!--------------- TÍTULO WEB --------------->
+
+  <title>HBB</title>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!--------------- STYLES --------------->
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Material Design Bootstrap -->
+  <link href="assets/css/mdb.min.css" rel="stylesheet">
+
+  <!-- Styles personalizados (opcionales) -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+<!-- MODAL DE BUSQUEDA DE SERIES -->
+  <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center fondonegro">
+        <h4 class="modal-title w-100 font-weight-bold">Filtros</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <form name="filtro" accept="" method="POST" class="fondonegro">
+      <div class="modal-body mx-3 fondonegro">
+        <div class="md-form mb-5 fondonegro">
+          <i class="fas fa-map-marker-alt prefix fondonegro"></i>
+          <input type="text" id="ubi" name="ubi" value="" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="ubi">Ubicación</label>
+        </div>
+
+        <div class="md-form mb-4 fondonegro">
+          <p data-error="wrong" data-success="right" for="fecha" class="white-text ml-1 fondonegro">Elige la fecha</p>
+          <i class="fas ffar fa-clock prefix fondonegro" style="margin-top: 38px;"></i>
+          <input type="date" id="fecha" name="fecha" value="" class="form-control validate">      
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <input type="submit" name="filtro" value="FILTRAR" class="btn" style="background: #e24a4a">
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FIN MODAL DE BUSQUEDA DE SERIES -->
+
+<!-- MODAL REGISTRO -->
+
+  <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content fondonegro">
+      <div class="modal-header text-center fondonegro">
+        <h4 class="modal-title w-100 font-weight-bold fondonegro">REGÍTRATE</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+
+        <form name="registro" action="" method="POST">
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text fondonegro"></i>
+          <input type="text" id="form1" name="nombre" value="" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form1">Nombre</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-user prefix grey-text fondonegro"></i>
+          <input type="text" id="form2" name="apellido" value="" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form2">Apellido(s)</label>
+        </div>
+
+
+        <div class="md-form mb-4">
+          <i class="fas fa-envelope prefix grey-text fondonegro"></i>
+          <input type="email" id="form3" name="correo" value="" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form3">Correo</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-unlock-alt prefix grey-text fondonegro"></i>
+          <input type="password" id="form4" name="clave" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form4">Contraseña</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-id-card prefix grey-text fondonegro"></i>
+          <input type="text" id="form5" name="dni" value="" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form5">DNI/NIE</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <p data-error="wrong" data-success="right" for="fecha" class="dark-grey-text ml-1">Fecha de Nacimiento</p>
+          <i class="fas fa-calendar-alt prefix grey-text fondonegro" style="margin-top: 35px;"></i>
+          <input type="date" id="form6" name="fdn" value="" class="form-control validate">
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-mobile-alt prefix grey-text fondonegro"></i>
+          <input type="text" id="form7" name="tel" value="" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form7">Telefono</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-map-marker-alt prefix grey-text fondonegro"></i>
+          <input type="text" id="form8" name="direccion" value="" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form8">Dirección</label>
+        </div>
+
+        <div class="form-check text-center mb-4">
+          <input type="checkbox" name="newsletter" class="form-check-input" id="newsletter">
+          <label class="form-check-label" for="newsletter">Newsletter</label>
+        </div>
+
+        <div class="form-check text-center">
+          <input type="checkbox" name="privacidad" class="form-check-input" id="privacidad">
+          <label class="form-check-label" for="privacidad">Accepto los terminos y condiciones y politica de privacidad!</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <input type="submit" name="registrar" value="REGISTRAR" class="btn" style="background: #e24a4a">
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FIN MODAL REGISTRO -->
+
+
+<!-- MODAL DE LOGIN -->
+
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content fondonegro">
+      <div class="modal-header text-center fondonegro">
+        <h4 class="modal-title w-100 font-weight-bold fondonegro">INICIAR SESIÓN</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form name="login" action="" method="POST">
+        <div class="md-form mb-5 fondonegro">
+          <i class="fas fa-envelope prefix grey-text fondonegro"></i>
+          <input type="email" name="correo" value="" id="correologin" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="correologin">Correo</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text fondonegro"></i>
+          <input type="password" name="clave" value="" id="clavelogin" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="clavelogin">Contraseña</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <input type="submit" name="login" value="ENVIAR" class="btn" style="background: #e24a4a">
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FIN MODAL LOGIN -->
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: #333333;">
+
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="#"><img class="logo" src="assets/img/logo.png"></a>
+
+  <form class="form-inline mr-auto">
+      <div class="md-form my-0"> 
+        <a href="" class="btn btn-outline-white btn-md my-0 ml-sm-2" data-toggle="modal" data-target="#modalLoginForm">Buscar serie</a>
+      </div>
+    </form>
+
+
+  
+</form>
+
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" style="float: right;" id="basicExampleNav">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Inicio
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">¿Qué es HBB?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Series</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Locales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" data-toggle="modal" data-target="#modalLogin">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" data-toggle="modal" data-target="#modalSubscriptionForm">Regístrate</a>
+      </li>
+
+      
+  <!-- Collapsible content -->
+    
+</nav>
+
+<!-------------------------- Navbar -------------------------->
+
+
+<!-- CARROUSEL -->
+<header>
+<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+    <!--
+    <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    -->
+  </ol>
+  <!--/.Indicators-->
+
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox">
+    <!--First slide-->
+    <div class="carousel-item active">
+      <span style="position: absolute; color: white; bottom: 40px; left: 50%; transform: translate(-50%, -0%); text-shadow: 1px 1px 2px black;">Evento 1</span>
+      <img class="d-block w-100" src="assets/img/evento1.jpg"
+        alt="First slide">
+    </div>
+    <!--/First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+      <span style="position: absolute; color: white; bottom: 40px; left: 50%; transform: translate(-50%, -0%); text-shadow: 1px 1px 2px black;">Evento 2</span>
+      <img class="d-block w-100" src="assets/img/evento2.jpg"
+        alt="Second slide">
+    </div>
+    <!--/Second slide-->
+    
+
+  </div>
+  <!--/.Slides-->
+  <!--Controls-->
+  <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper-->
+
+
+<br>
+
+<!-- PROXIMOS EVENTOS -->
+<div style="color: white; padding: 20px;"><i class="far fa-calendar-alt"></i><span> Proximos eventos</span>
+
+<br><br>
+
+<!-- PROX EVENTO 1 -->
+<div class="card card-image" style="background-image: url(assets/img/prox1.jpg);">
+
+  <!-- Content -->
+  <div class="text-white d-flex align-items-center rgba-black-strong py-5 px-4">
+    <div>
+      <h5 class="green-text"></i>HOY</h5>
+      <h3 class="card-title pt-2"><strong>Juego de Tronos 8x04</strong></h3>
+      <p>Sitio: Nombre del lugar
+      <br>Fecha: Dia del evento
+      <br>Hora: Hora del eventoaaaaaaa
+      </p>
+      <a class="btn btn-outline-white btn-md my-0 ml-sm-2"><i class="fas fa-info-circle left"></i> Información</a>
+    </div>
+  </div>
+
+</div>
+<!-- Card -->
+
+<br><br>
+
+
+
+</div>
+<br>
+
+
+
+
+
+
+</header>
+
+
+<!-- FOOTER -->
+
+<!-- Footer -->
+<footer class="page-footer font-small black darken-3">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href=""> HBB.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+
+
+<!-- Fin del cuerpo de la web -->
+
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!-------------------- OCULTO -------------------->
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!--------------- SCRIPTS --------------->
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="assets/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="assets/js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+</body>
+
+</html>
